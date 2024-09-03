@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class UserController {
 
     @GetMapping("/getUser")
-    public void getUser (){
+    public void getUser () {
     }
 }

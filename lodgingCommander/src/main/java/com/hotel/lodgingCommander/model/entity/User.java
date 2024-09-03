@@ -1,4 +1,4 @@
-package com.hotel.lodgingCommander.entity;
+package com.hotel.lodgingCommander.model.entity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
