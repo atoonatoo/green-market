@@ -12,7 +12,7 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "user")
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,24 +29,5 @@ public class User {
 
     @Column(nullable = false)
     private String role;
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Hotel> hotels;
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<LikeList> likeLists;
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Review> reviews;
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<BookingQna> bookingQnas;
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Cart> carts;
-
-    // Getters and setters...
-
-
 
 }
