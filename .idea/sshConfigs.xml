@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="223.130.158.202" id="866c11f6-dc1a-4fad-992a-c25cd876c798" port="22" customName="hotel-ncloud-server" nameFormat="CUSTOM" username="root" useOpenSSHConfig="true">
+        <option name="customName" value="hotel-ncloud-server" />
+      </sshConfig>
+    </configs>
+  </component>
+</project>
