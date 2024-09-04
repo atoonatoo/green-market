@@ -12,18 +12,25 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-@Controller
+@RestController
 @RequiredArgsConstructor
-@RequestMapping("/user/api")
+@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
+@RequestMapping("/api/users")
 public class UserController {
 
     private final UserService service;
     private final UserRepository repository;
 
-    @PostMapping("/join")
-    public ResponseEntity<Boolean> join(@RequestBody UserModel userModel) {
-        return ResponseEntity.ok(service.join(userModel));
+    @PostMapping("/")
+    public ResponseEntity<User> insert(@RequestBody UserModel model) {
+        return ResponseEntity.ok(repository.save(User.builder()
+                .email(model.getEmail())
+                .tel(model.getTel())
+                .grade(model.getGrade())
+                .role(model.getRole())
+                .build()));
     }
+
 //
 //    @PostMapping("/logIn")
 //    public ResponseEntity<Boolean> logIn(@RequestBody UserModel userModel) {
