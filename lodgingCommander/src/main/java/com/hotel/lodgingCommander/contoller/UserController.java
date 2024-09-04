@@ -17,13 +17,13 @@ import java.util.Optional;
 @RequestMapping("/user/api")
 public class UserController {
 
-//    private final UserService service;
-//    private final UserRepository repository;
-//
-//    @PostMapping("/join")
-//    public ResponseEntity<Boolean> join(@RequestBody UserModel userModel) {
-//        return ResponseEntity.ok(service.join(userModel));
-//    }
+    private final UserService service;
+    private final UserRepository repository;
+
+    @PostMapping("/join")
+    public ResponseEntity<Boolean> join(@RequestBody UserModel userModel) {
+        return ResponseEntity.ok(service.join(userModel));
+    }
 //
 //    @PostMapping("/logIn")
 //    public ResponseEntity<Boolean> logIn(@RequestBody UserModel userModel) {
