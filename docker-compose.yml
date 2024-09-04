@@ -3,11 +3,11 @@ services:
     container_name: mysql
     image: mysql:latest
     volumes:
-      - ./mysql/greenmarket/etc/mysql/conf.d:/etc/mysql/conf.d:ro
-      - ./mysql/greenmarket/var/lib/mysql:/var/lib/mysql
-      - ./mysql/greenmarket/var/log/mysql:/var/log/mysql
+      - ./mysql/hotel_project/etc/mysql/conf.d:/etc/mysql/conf.d:ro
+      - ./mysql/hotel_project/var/lib/mysql:/var/lib/mysql
+      - ./mysql/hotel_project/var/log/mysql:/var/log/mysql
     environment:
-      - MYSQL_DATABASE=greenmarketdb
+      - MYSQL_DATABASE=hotel_project
       - MYSQL_ROOT_PASSWORD=1234
       - MYSQL_ROOT_HOST=%
     command: ['--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
@@ -21,11 +21,11 @@ services:
     ports:
       - 27017:27017
     volumes:
-      - ./mongodb:/data/greenmarketdb
+      - ./mongodb:/data/hotel_project
     environment:
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=1234
-      - MONGO_INITDB_DATABASE=greenmarket
+      - MONGO_INITDB_DATABASE=hotel_project
     restart: always
   redis:
     container_name: redis
@@ -50,5 +50,5 @@ services:
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: 1234
-      POSTGRES_DB: greenmarketdb
+      POSTGRES_DB: hotel_project
     restart: always

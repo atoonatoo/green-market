@@ -1,7 +1,7 @@
 package com.hotel.lodgingCommander.contoller;
 
 import com.hotel.lodgingCommander.model.domain.UserModel;
-import com.hotel.lodgingCommander.model.entity.User;
+import com.hotel.lodgingCommander.entity.User;
 import com.hotel.lodgingCommander.model.repository.UserRepository;
 import com.hotel.lodgingCommander.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -46,14 +46,14 @@ public class UserController {
         return service.delete(userModel);
     }
 
-    @GetMapping("/findAll")
+    @GetMapping("/list")
     public ResponseEntity<List<User>> findAll() {
         return ResponseEntity.ok(repository.findAll());
     }
 
-    @GetMapping("/existsByEmail")
-    public ResponseEntity<Optional<User>> existsByEmail (){
-        return ResponseEntity.ok(repository.existsByEmail());
+    @GetMapping("/{email}")
+    public ResponseEntity<Boolean> existsByEmail (String email){
+        return ResponseEntity.ok(repository.existsByEmail(email));
     }
 
     @GetMapping("/count")
