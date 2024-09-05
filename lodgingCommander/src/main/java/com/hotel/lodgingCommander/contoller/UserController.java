@@ -6,15 +6,11 @@ import com.hotel.lodgingCommander.model.repository.UserRepository;
 import com.hotel.lodgingCommander.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
-@CrossOrigin(origins = "http://223.130.158.202:3000", allowCredentials = "true")
+@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
 @RequestMapping("/api/users")
 public class UserController {
     private final UserService service;
