@@ -17,7 +17,7 @@ public class UserController {
     private final UserRepository repository;
 
     @PostMapping("/")
-    public ResponseEntity<User> insert(@RequestBody UserModel model) {
+    public ResponseEntity<User> join(@RequestBody UserModel model) {
         return ResponseEntity.ok(repository.save(User.builder()
                 .email(model.getEmail())
                 .tel(model.getTel())
